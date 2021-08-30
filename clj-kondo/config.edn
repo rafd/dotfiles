@@ -1,1 +1,5 @@
-{:lint-as {zig.api/reg-command clj-kondo.lint-as/def-catch-all}}
+{:lint-as {zig.api/reg-command clj-kondo.lint-as/def-catch-all
+           reagent.core/with-let clojure.core/let
+           mount.core/defstate clojure.core/def
+           secretary.core/defroute clojure.core/defn
+           clojurewerkz.quartzite.jobs/defjob clojure.core/defn}}
