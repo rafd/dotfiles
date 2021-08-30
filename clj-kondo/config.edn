@@ -1,0 +1,1 @@
+{:lint-as {zig.api/reg-command clj-kondo.lint-as/def-catch-all}}
