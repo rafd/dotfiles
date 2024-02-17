@@ -1,2 +1,7 @@
 # git config --global core.excludesFile '~/.gitignore'
 .DS_Store
+.lsp
+.clj-kondo
+.cpcache
+/TODO
+/config.edn
