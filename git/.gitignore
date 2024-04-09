@@ -5,3 +5,5 @@
 .cpcache
 /TODO
 /config.edn
+/.clj-kondo
+/checkouts
