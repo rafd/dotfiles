@@ -13,8 +13,14 @@
 	required = true
 [merge]
 	ff = no
-	conflictstyle = zdiff3
 [pull]
 	ff = yes
 [diff]
 	algorithm = histogram
+  tool = difftastic
+[difftool]
+  prompt = false
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+  difftool = true
