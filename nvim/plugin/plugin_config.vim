@@ -1,18 +1,10 @@
 " Airline
 let g:airline_powerline_fonts = 1
-"let g:airline_theme = 'gruvbox'
-
-" Syntastic
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=2
 
 " Ctrl P
 nnoremap <leader>CC :CtrlPClearCache<CR>
-"let g:ctrlp_map = '<leader>t'
-"let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_dont_split = 'NERD_tree_2'
-"let g:ctrlp_extensions = ['tag']
 let g:ctrlp_prompt_mappings = {
       \ 'PrtSelectMove("j")': ['<C-j>', '<down>', '<s-tab>'],
       \ 'PrtSelectMove("k")': ['<C-k>', '<up>', '<tab>'],
@@ -36,44 +28,22 @@ let my_ctrlp_git_cmd = "" .
       \ ctrlp_filter_greps
 let g:ctrlp_user_command = ['.git/', my_ctrlp_git_cmd, my_ctrlp_user_cmd]
 
-" deoplete
-let g:deoplete#enable_at_startup = 1
-"let g:deoplete#enable_smart_case = 1
-call deoplete#custom#var('omni','input_patterns', {
-      \ 'clojure' : '[^\d() \t]+'
-      \})
-"let g:deoplete#omni#input_patterns = {}
-"let g:deoplete#omni#input_patterns.c = '[^.\d *\t]\%(\.\|->\)\w*'
-"let g:deoplete#omni#input_patterns.clojure = '[^\d() \t]+'
-"let g:deoplete#omni#input_patterns.cpp = '[^.\d *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-"let g:deoplete#omni#input_patterns.css   = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
-"let g:deoplete#omni#input_patterns.go = '[^.\d *\t]\.\w*'
-"let g:deoplete#omni#input_patterns.html = '<[^>]*'
-"let g:deoplete#omni#input_patterns.javascript = '[^. \t]\.\%(\h\w*\)\?'
-"let g:deoplete#omni#input_patterns.md   = '<[^>]*'
-"let g:deoplete#omni#input_patterns.ruby = ['[^. *\t]\.\w*', '\h\w*::']
-"let g:deoplete#omni#input_patterns.sass   = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
-"let g:deoplete#omni#input_patterns.scss   = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
-"let g:deoplete#omni#input_patterns.xml  = '<[^>]*'
-"autocmd CmdwinEnter * let b:deoplete_sources = ['buffer']
-"let g:deoplete#sources = {}
-"let g:deoplete#sources._ = ['buffer', 'look']
-"let g:deoplete#sources.clojure = ['buffer', 'omni', 'look']
-"let g:deoplete#sources.rust = ['buffer', 'racer']
-
-let g:echodoc_enable_at_startup = 1
-
 let g:gitgutter_enabled = 1
 
-let g:indent_guides_start_level=2
-let g:indent_guides_guide_size=1
-let g:indent_guides_auto_colors = 0
+" ale
 
+let g:ale_linters = {
+\   'clojure': ['clj-kondo'],
+\}
 
-" Show syntax highlighting groups for word under cursor
-function! SynStack() " {{
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc "}}
+" deoplete
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option("smart_case", v:true)
+
+call deoplete#custom#option('candidate_marks', ['A', 'S', 'D', 'F', 'G'])
+
+call deoplete#custom#option('num_processes', 0)
+
+" call deoplete#custom#var('omni','input_patterns', {
+"    \ 'clojure' : '[^\d() \t]+'
+"    \})

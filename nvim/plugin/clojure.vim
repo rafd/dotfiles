@@ -3,8 +3,6 @@ let g:clojure_maxlines = 0
 
 let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn,defcomponent,defcomponentmethod,reg-event-fx,x/transform,x/multi-path'
 
-let g:ale_linters = {'clojure': ['clj-kondo']}
-
 augroup clojure
   autocmd!
 
@@ -19,6 +17,29 @@ augroup clojure
         \ let g:clojure_fuzzy_indent_patterns += ['^POST', '^PUT', '^DELETE', '^GET', '^OPTIONS', '^PATCH', '^context']
 
   autocmd BufRead,BufNewFile *.clj,*.cljc
-        \ nnoremap <buffer> <M-r> :Require<CR>
+        \ nnoremap <buffer> ® :w <bar> :Require<CR>
+        "\ nnoremap <buffer> <M-r> :Require<CR>
 
 augroup END
+
+function! GetCljProjectRoot(buffer) abort
+    let l:project_root = ale#path#FindNearestFile(a:buffer, 'project.clj')
+
+    if !empty(l:project_root)
+        return fnamemodify(l:project_root, ':h')
+    endif
+
+    return ''
+endfunction
+
+call ale#linter#Define('clojure', {
+\   'name': 'clojure-lsp',
+\   'lsp': 'stdio',
+\   'executable': '/opt/homebrew/bin/clojure-lsp',
+\   'command': '/opt/homebrew/bin/clojure-lsp',
+\   'project_root': function('GetCljProjectRoot'),
+\})
+
+let g:ale_linters = {'clojure': ['clj-kondo', 'clojure-lsp']}
+
+lua require('init')
