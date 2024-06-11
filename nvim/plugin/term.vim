@@ -1,3 +1,5 @@
+" open a singleton terminal, Ctrl-T
+
 function! s:SwitchToTerm()
  let termBufs = map(filter(nvim_list_bufs(), {i,v -> getbufvar(v,"&buftype") == 'terminal'}), {i,v -> [v,getbufvar(v,"term_title")]})
  vsplit
