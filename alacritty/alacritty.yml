@@ -102,22 +102,41 @@ window:
 
 # Font configuration
 font:
-  normal:
-    family: PragmataPro
-    style: Regular
-  bold:
-    family: PragmataPro
-    style: Bold
-  italic:
-    family: PragmataPro
-    style: Italic
-  size: 12.0
-  antialias: false
-  rgba: false
-  lcdfilter: false
-  hintstyle: none
-  scale_with_dpi: true
+ normal:
+   family: Pragmasevka
+   style: Regular
+ bold:
+   family: Pragmasevka
+   style: Bold
+ italic:
+   family: Pragmasevka
+   style: Italic
+ size: 14.0
+ antialias: false
+ rgba: false
+ lcdfilter: false
+ hintstyle: none
+ scale_with_dpi: true
+ use_thin_strokes: true
 
+#
+# font:
+#   normal:
+#     family: PragmataPro
+#     style: Regular
+#   bold:
+#     family: PragmataPro
+#     style: Bold
+#   italic:
+#     family: PragmataPro
+#     style: Italic
+#   size: 14.0
+#   antialias: false
+#   rgba: false
+#   lcdfilter: false
+#   hintstyle: none
+#   scale_with_dpi: true
+#   use_thin_strokes: true
 
 
   # Normal (roman) font face

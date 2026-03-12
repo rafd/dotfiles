@@ -10,9 +10,10 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'pangloss/vim-javascript'                 " javascript
 
   " Clojure
+  Plug 'clojure-vim/clojure.vim', { 'branch': 'indent-forms' }
   Plug 'guns/vim-sexp' | Plug 'tpope/vim-sexp-mappings-for-regular-people'
   Plug 'tpope/vim-fireplace'                     " repl integration
-  Plug 'guns/vim-clojure-static'                 " syntax highlighting, indentation
+  " Plug 'guns/vim-clojure-static'                 " syntax highlighting, indentation
   Plug 'guns/vim-clojure-highlight'              " syntax hl for runtime vars
   Plug 'alexander-yakushev/compliment'           " completion
   " Plug 'venantius/vim-cljfmt'
@@ -22,12 +23,18 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'w0rp/ale'                                 " linting
   if has('nvim')
     Plug 'Shougo/deoplete.nvim'
-    Plug 'ujihisa/neco-look'                      " look completion source
+    " Plug 'ujihisa/neco-look'                      " look completion source
     Plug 'deoplete-plugins/deoplete-lsp'          " lsp completion source
     Plug 'neovim/nvim-lspconfig'                  " auto-config for clojure (and other) lsps
   endif
 
-  Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
+  " Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
+  " Plug 'leonardcser/cursortab.nvim', { 'do': 'cd server && go build' }
+  Plug 'github/copilot.vim'
+  Plug 'panozzaj/vim-copilot-ignore'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-treesitter/nvim-treesitter'
+  Plug 'olimorris/codecompanion.nvim'
 
   " Misc
   Plug 'ctrlpvim/ctrlp.vim'
@@ -41,7 +48,7 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Plug 'Shougo/echodoc.vim'
   " Plug 'mileszs/ack.vim' "
-  " Plug 'tpope/vim-unimpaired'
+  Plug 'tpope/vim-unimpaired'
   " Plug 'nathanaelkane/vim-indent-guides'
   " Plug 'vim-syntastic/syntastic'
 

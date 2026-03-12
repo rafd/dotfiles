@@ -3,7 +3,12 @@
 .lsp
 .clj-kondo
 .cpcache
+/.calva
 /TODO
 /config.edn
 /.clj-kondo
 /checkouts
+/_checkouts
+.java-version
+CLAUDE.md
+/.claude

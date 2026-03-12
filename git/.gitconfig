@@ -2,7 +2,7 @@
 	email = rafal.dittwald@gmail.com
 	name = Rafal Dittwald
 [core]
-	excludesFile = ~/.gitignore
+	excludesfile = /Users/rafal/.gitignore
 	editor = nvim
 [init]
 	defaultBranch = master
@@ -16,11 +16,20 @@
 [pull]
 	ff = yes
 [diff]
-	algorithm = histogram
-  tool = difftastic
+  external = difft
+  #tool = difftastic
+  #algorithm = histogram
 [difftool]
   prompt = false
 [difftool "difftastic"]
   cmd = difft "$LOCAL" "$REMOTE"
 [pager]
   difftool = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/rafal/.stCommitMsg

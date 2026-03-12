@@ -2,4 +2,10 @@
            reagent.core/with-let clojure.core/let
            mount.core/defstate clojure.core/def
            secretary.core/defroute clojure.core/defn
-           clojurewerkz.quartzite.jobs/defjob clojure.core/defn}}
+           clojurewerkz.quartzite.jobs/defjob clojure.core/defn
+
+           com.rpl.specter/defcollector clojure.core/defn
+           com.rpl.specter/defdynamicnav clojure.core/defn
+           com.rpl.specter/defmacroalias clojure.core/def
+           com.rpl.specter/defnav clojure.core/defn
+           com.rpl.specter/defrichnav clojure.core/defn}}

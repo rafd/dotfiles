@@ -39,7 +39,6 @@ set nrformats+=alpha
 set nocompatible
 set noshowmode
 set omnifunc=syntaxcomplete#Complete
-set pastetoggle=<F2>
 set path-=/usr/include
 set path+=**
 if exists("&relativenumber")

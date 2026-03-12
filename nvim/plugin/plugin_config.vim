@@ -1,6 +1,11 @@
 " Airline
 let g:airline_powerline_fonts = 1
 
+" LSP Code Actions
+noremap cpa :lua vim.lsp.buf.code_action()<CR>
+noremap grr :lua vim.lsp.buf.references()<CR>
+
+
 " Ctrl P
 nnoremap <leader>CC :CtrlPClearCache<CR>
 let g:ctrlp_working_path_mode = 0
@@ -47,3 +52,5 @@ call deoplete#custom#option('num_processes', 0)
 " call deoplete#custom#var('omni','input_patterns', {
 "    \ 'clojure' : '[^\d() \t]+'
 "    \})
+
+

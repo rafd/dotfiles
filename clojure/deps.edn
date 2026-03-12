@@ -1,0 +1,10 @@
+{:aliases
+ {:flowstorm
+  {:classpath-overrides {org.clojure/clojure nil}
+   :extra-deps {com.github.flow-storm/clojure {:mvn/version "RELEASE"}
+                com.github.flow-storm/flow-storm-dbg {:mvn/version "RELEASE"
+                                                      ;:mvn/version "3.15.7"
+                                                       #_#_:local/root "/Users/rafal/Code/oss-flow-storm"}}
+   :jvm-opts ["-Dflowstorm.startRecording=false"
+              "-Dclojure.storm.instrumentEnable=true"
+              "-Dclojure.storm.instrumentAutoPrefixes=true"]}}}
