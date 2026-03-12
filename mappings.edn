@@ -1,0 +1,7 @@
+;; source (relative to dotfiles dir) -> target (parent directory for the symlink)
+{"nvim" "~/.config/"
+ "alacritty" "~/.config/"
+ "clj-kondo" "~/.config/"
+ ".tmux.conf" "~/"
+ "git/.gitconfig" "~/"
+ "git/.gitignore" "~/"}

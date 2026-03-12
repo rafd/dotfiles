@@ -1,5 +1,0 @@
-
-ln -s  alacritty ~/.config/alacritty
-ln -s  nvim ~/.config/nvim
-ln -s  clj-kondo ~/.config/clj-kondo
-ln -s  .tmux.conf ~/.tmux.conf
