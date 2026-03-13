@@ -2,6 +2,8 @@
 {"nvim" "~/.config/"
  "alacritty" "~/.config/"
  "clj-kondo" "~/.config/"
+ "clojure/profiles.clj" "~/.lein/"
+ "clojure/deps.edn" "~/.clojure/"
  "zprezto/zlogin" "~/.zlogin"
  "zprezto/zlogout" "~/.zlogout"
  "zprezto/zpreztorc" "~/.zpreztorc"

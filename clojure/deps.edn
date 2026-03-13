@@ -1,5 +1,10 @@
 {:aliases
- {:flowstorm
+ ;; clj -M:flowstorm:nrepl
+ {:nrepl
+  {:extra-deps {nrepl/nrepl {:mvn/version "RELEASE"}
+                cider/cider-nrepl {:mvn/version "RELEASE"}}
+   :main-opts ["-m" "nrepl.cmdline" "--middleware" "[cider.nrepl/cider-middleware]"]}
+  :flowstorm
   {:classpath-overrides {org.clojure/clojure nil}
    :extra-deps {com.github.flow-storm/clojure {:mvn/version "RELEASE"}
                 com.github.flow-storm/flow-storm-dbg {:mvn/version "RELEASE"
@@ -7,4 +12,31 @@
                                                        #_#_:local/root "/Users/rafal/Code/oss-flow-storm"}}
    :jvm-opts ["-Dflowstorm.startRecording=false"
               "-Dclojure.storm.instrumentEnable=true"
-              "-Dclojure.storm.instrumentAutoPrefixes=true"]}}}
+              "-Dclojure.storm.instrumentAutoPrefixes=true"]}
+  :mcp
+  {:deps {org.slf4j/slf4j-nop {:mvn/version "2.0.16"} ;; Required for stdio server
+          com.bhauman/clojure-mcp {:git/url "https://github.com/bhauman/clojure-mcp.git"
+                                   :git/tag "v0.1.4-alpha"
+                                   :git/sha "080b29b"}}
+   :exec-fn clojure-mcp.main/start-mcp-server
+   :exec-args {:port 7888}}
+ :1.12-storm {:classpath-overrides {org.clojure/clojure nil}
+               :extra-deps {com.github.flow-storm/clojure {:mvn/version  "1.12.3-1"}
+                            com.github.flow-storm/flow-storm-dbg {:mvn/version "4.5.8"}}
+               :jvm-opts ["-Dflowstorm.theme=dark"]}
+
+  :fs-web-plugin {:extra-deps {com.github.flow-storm/flow-storm-web-plugin {:mvn/version "1.0.3"}}
+                  :jvm-opts ["-Dclojure.storm.instrumentOnlyPrefixes.webPlugin=org.httpkit.server,ring.adapter.jetty,next.jdbc.result-set"
+                             "-Dflowstorm.plugins.namespaces.webPlugin=flow-storm.plugins.web.all"]}
+
+  :fs-cljs-compiler-plugin {:extra-deps {com.github.flow-storm/flow-storm-cljs-compiler-plugin {:mvn/version "1.0.0-beta5"}}
+                            :jvm-opts ["-Dclojure.storm.instrumentOnlyPrefixes.cljsCompilerPlugin=cljs."
+                                       "-Dflowstorm.plugins.namespaces.cljsCompilerPlugin=flow-storm.plugins.cljs-compiler.all"]}
+
+  :fs-async-flow-plugin {:extra-deps {com.github.flow-storm/flow-storm-async-flow-plugin {:mvn/version "1.0.1-alpha3"}}
+                         :jvm-opts ["-Dclojure.storm.instrumentOnlyPrefixes.asyncFlowPlugin=clojure.core.async.flow"
+                                    "-Dflowstorm.plugins.namespaces.asyncFlowPlugin=flow-storm.plugins.async-flow.all"]}
+
+  :fs-flowbook-plugin {:extra-deps {com.github.flow-storm/flow-storm-flowbook-plugin {:mvn/version "1.0.0-alpha1"}}
+                       :jvm-opts ["-Dflowstorm.plugins.namespaces.flowbookPlugin=flow-storm.plugins.flowbook.all"]}}}
+
