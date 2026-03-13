@@ -19,8 +19,8 @@ set foldmethod=marker
 set foldlevelstart=99
 set formatoptions+=n  " gq recognizes numbered lists
 set gdefault  " Make substitute global by default
-let g:ackprg = 'ag --vimgrep'
-set grepprg=ag\ --vimgrep
+let g:ackprg = 'rg --vimgrep'
+set grepprg=rg\ --vimgrep
 set hidden  " When opening a new file hide the current instead of closing it
 set history=1000
 set hlsearch
