@@ -2,6 +2,12 @@
 {"nvim" "~/.config/"
  "alacritty" "~/.config/"
  "clj-kondo" "~/.config/"
+ "zprezto/zlogin" "~/.zlogin"
+ "zprezto/zlogout" "~/.zlogout"
+ "zprezto/zpreztorc" "~/.zpreztorc"
+ "zprezto/zprofile" "~/.zprofile"
+ "zprezto/zshenv" "~/.zshenv"
+ "zprezto/zshrc" "~/.zshrc"
  ".tmux.conf" "~/"
  "git/.gitconfig" "~/"
  "git/.gitignore" "~/"}
