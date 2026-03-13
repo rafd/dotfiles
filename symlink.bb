@@ -51,4 +51,4 @@
   (doseq [[source target-dir] (mappings)]
     (create-symlink! source target-dir)))
 
-#_(-main)
+(-main)
