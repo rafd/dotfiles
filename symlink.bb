@@ -11,11 +11,13 @@
     (str (fs/home) "/" (subs path 2))
     path))
 
-(defn create-symlink! [source target-dir]
+(defn create-symlink! [source target]
   (let [source-path (str dotfiles-dir "/" source)
-        basename (fs/file-name source)
-        target-path (str (expand-home target-dir) basename)
-        target-parent (expand-home target-dir)]
+        dir? (str/ends-with? target "/")
+        target-path (if dir?
+                      (str (expand-home target) (fs/file-name source))
+                      (expand-home target))
+        target-parent (str (fs/parent target-path))]
     (when (not (fs/exists? source-path))
       (println "WARNING: source does not exist:" source-path)
       (System/exit 1))
