@@ -1,6 +1,7 @@
 ;; source (relative to dotfiles dir) -> target (parent directory for the symlink)
 {"nvim" "~/.config/"
  "alacritty" "~/.config/"
+ "1password/agent.toml" "~/.config/1password/ssh/agent.toml"
  "clj-kondo" "~/.config/"
  "clojure/profiles.clj" "~/.lein/"
  "clojure/deps.edn" "~/.clojure/"
