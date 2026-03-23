@@ -89,7 +89,9 @@ let g:indent_guides_guide_size=1
 
 syntax enable
 set background=dark
-colorscheme Tomorrow-Night-Bright
+"colorscheme Tomorrow-Night-Bright
+"colorscheme tomorrow-night-alabaster
+
 
 filetype on
 filetype plugin on

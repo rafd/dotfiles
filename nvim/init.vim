@@ -52,5 +52,8 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'nathanaelkane/vim-indent-guides'
   " Plug 'vim-syntastic/syntastic'
 
+  Plug 'mcncl/alabaster.nvim'
+  " Plug 'sderev/alabaster.vim'
+
 call plug#end()
 

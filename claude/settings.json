@@ -1,0 +1,34 @@
+{
+  "respectGitignore": true,
+  "includeGitInstructions": false,
+  "permissions": {
+    "deny": [
+      "Read(**/config.edn)",
+      "Read(~/Code/bloom-server-config)"
+    ],
+    "disableBypassPermissionsMode": "disable"
+  },
+  "enabledPlugins": {
+    "claude-md-management@claude-plugins-official": true
+  },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": false,
+    "allowUnsandboxedCommands": false,
+    "network": {
+      "allowedDomains": [],
+      "allowUnixSockets": [],
+      "allowAllUnixSockets": false,
+      "allowLocalBinding": false
+    },
+    "filesystem": {},
+    "enableWeakerNestedSandbox": false,
+    "excludedCommands": []
+  },
+  "spinnerVerbs": {
+    "mode": "replace",
+    "verbs": [
+      "Thinking"
+    ]
+  }
+}

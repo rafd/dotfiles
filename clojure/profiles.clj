@@ -8,8 +8,8 @@
  {:dependencies [[com.clojure-goes-fast/clj-memory-meter "0.3.0"]]
   :jvm-opts ["-Djdk.attach.allowAttachSelf"]}
  :flowstorm
- {:dependencies [[com.github.flow-storm/clojure "1.12.0-9" #_"RELEASE"]
-                 [com.github.flow-storm/flow-storm-dbg "4.4.0" #_"RELEASE"]]
+ {:dependencies [[com.github.flow-storm/clojure "RELEASE"]
+                 [com.github.flow-storm/flow-storm-dbg "RELEASE"]]
   :exclusions [org.clojure/clojure]
   :jvm-opts ["-Dflowstorm.startRecording=false"
              "-Dclojure.storm.instrumentEnable=true"

@@ -1,5 +1,11 @@
 require("codecompanion").setup()
 
+require('alabaster').setup({
+  style = "dark",
+})
+
+vim.cmd.colorscheme('alabaster')
+
 -- llama-server -m ~/Downloads/sweep-next-edit-1.5b.q8_0.v2.gguf --port 8000
 if pcall(require, "cursortab") then
   require("cursortab").setup({
